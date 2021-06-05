@@ -27,7 +27,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ NULL,         NULL,       "firefox",  1,          False,      -1 },
+	{ NULL,         NULL,       "Firefox",  1,          False,      -1 },
 	{ NULL,         NULL,       "Atom",     2,          False,      -1 },
 	{ NULL,         NULL,       "alarm-clock-applet",      5,          False,      -1 },
 };

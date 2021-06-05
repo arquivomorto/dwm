@@ -24,7 +24,7 @@ done &
 
 # programas
 setsid alarm-clock-applet &
-setsid chromium-browser &
+setsid firefox &
 setsid pavucontrol &
 setsid rhythmbox &
 setsid nitrogen --restore &
