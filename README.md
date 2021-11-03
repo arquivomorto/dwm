@@ -11,6 +11,16 @@
 # resolve o bug de apps java
 export _JAVA_AWT_WM_NONREPARENTING=1 
 
+# aviso de bateria descarregando
+while true; do
+    BATT=$( acpi -b | awk '{ split($5,a,":"); print substr($4,0,2)}')
+    STATUS=$( acpi -b | awk '{ split($5,a,":"); print substr($3,0,2)}')
+    if [ $BATT -le 50 ] && [ $STATUS == 'Di' ]; then
+        notify-send "⚡ $BATT% de bateria"
+    fi
+    sleep 10s
+done &
+
 # bateria, cpu, memória, calendário e relógio
 while true; do
     bat="$(acpi -b)"
@@ -19,7 +29,7 @@ while true; do
     cpu="$(mpstat | awk '(NR==4){ print $4 }')"
     status="$(echo "$bat, CPU: $cpu%, Mem: $mem ~ $data")"
     xsetroot -name " $(echo $status | xargs) "
-    sleep 1s    # atualiza a cada 1 segundo
+    sleep 1s
 done &
 
 # programas
