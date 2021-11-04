@@ -38,3 +38,4 @@ setsid firefox &
 setsid pavucontrol &
 setsid rhythmbox &
 setsid nitrogen --restore &
+```
